@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="progettoStrada.Macchina">
+    <Position X="5.25" Y="2.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIAAQAAAAAAAAAAAAAAAAIEAAAAAA=</HashCode>
+      <FileName>Macchina.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="StradaDiPartenza" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="progettoStrada.Strada">
+    <Position X="9" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAIAAAACAAAAgAAAAAAA=</HashCode>
+      <FileName>Strada.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MacchineInStrada" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="progettoStrada.Ponte">
+    <Position X="0.5" Y="2.5" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAEAAAAAAAAAAABAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Ponte.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MacchineSulPonte" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
