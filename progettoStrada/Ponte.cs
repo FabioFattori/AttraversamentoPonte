@@ -7,7 +7,7 @@ namespace progettoStrada
 {
     public class Ponte
     {
-        private const int PESO_MASSIMO_SOSTENIBILE = 10;//10 per far andare massimo 10 macchina alla volta (se faccio la parte extra i camion li farò pesare 10)
+        private int pesoSostenibilePonte = 10;//10 per far andare massimo 10 macchina alla volta (se faccio la parte extra i camion li farò pesare 10)
         private List<Macchina> _macchineSulPonte;
 
         public Ponte()
@@ -18,7 +18,10 @@ namespace progettoStrada
 
         public List<Macchina> MacchineSulPonte
         {
-            get => default;
+            get
+            {
+                return _macchineSulPonte;
+            }
             set
             {
                 _macchineSulPonte = value;
@@ -27,12 +30,21 @@ namespace progettoStrada
 
         public void NuovaMacchinaIniziaAttraversataDelPonte(Macchina macchina)
         {
-            MacchineSulPonte.Add(macchina);
+            if (pesoSostenibilePonte - 1 >= 0)
+            {
+                MacchineSulPonte.Add(macchina);
+                pesoSostenibilePonte = pesoSostenibilePonte - 1;
+            }
+            else
+            {
+                throw new Exception("non è possibile far passare la macchina ora");
+            }
         }
 
         public void MacchinaArrivaAllAltraEstremitaDelPonte(Macchina macchina)
         {
             MacchineSulPonte.Remove(macchina);
+            pesoSostenibilePonte++;
         }
     }
 }
