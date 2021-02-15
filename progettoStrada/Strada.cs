@@ -22,7 +22,7 @@ namespace progettoStrada
             get => default;
             set
             {
-                if (value.ToLower() == "sinistro" || value.ToLower() == "destro")
+                if (value.ToLower() == "sinistra" || value.ToLower() == "destra")
                     _latoDelPonte = value.ToLower();
                 else
                     throw new Exception("lato dele ponte nella strada non valido");
@@ -31,7 +31,10 @@ namespace progettoStrada
 
         public List<Macchina> MacchineInStrada
         {
-            get => default;
+            get
+            {
+                return _macchineInStrada;
+            }
             set
             {
                 _macchineInStrada = value;

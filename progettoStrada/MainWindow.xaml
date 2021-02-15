@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:progettoStrada"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" >
     <Grid>
-        
+        <Image HorizontalAlignment="Left" Height="502" Margin="-45,0,-0.4,-82" VerticalAlignment="Top" Width="839" Source="primo schizzo ponte.png"/>
+        <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="671,57,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaDestra" Click="SpawnMacchinaInStradaDestra_Click"/>
+        <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="36,57,0,0" VerticalAlignment="Top" Width="114" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="-12,423,0,-62" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra" Source="macchina.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="671,423,0,-62" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra" Source="macchina rossa.png"/>
+
+
     </Grid>
 </Window>

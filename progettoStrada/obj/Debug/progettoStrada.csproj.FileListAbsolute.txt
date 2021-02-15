@@ -1,0 +1,15 @@
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\bin\Debug\progettoStrada.exe.config
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\bin\Debug\progettoStrada.exe
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\bin\Debug\progettoStrada.pdb
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.csprojAssemblyReference.cache
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\MainWindow.g.cs
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\App.g.cs
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada_MarkupCompile.cache
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada_MarkupCompile.lref
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\MainWindow.baml
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.g.resources
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.Properties.Resources.resources
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.csproj.GenerateResource.cache
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.csproj.CoreCompileInputs.cache
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.exe
+C:\Users\fabio\Desktop\AttraversamentoPonte\progettoStrada\obj\Debug\progettoStrada.pdb

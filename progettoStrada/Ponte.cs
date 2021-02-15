@@ -25,14 +25,14 @@ namespace progettoStrada
             }
         }
 
-        public void NuovaMacchinaIniziaAttraversataDelPonte()
+        public void NuovaMacchinaIniziaAttraversataDelPonte(Macchina macchina)
         {
-            throw new System.NotImplementedException();
+            MacchineSulPonte.Add(macchina);
         }
 
-        public void MacchinaArrivaAllAltraEstremitaDelPonte()
+        public void MacchinaArrivaAllAltraEstremitaDelPonte(Macchina macchina)
         {
-            throw new System.NotImplementedException();
+            MacchineSulPonte.Remove(macchina);
         }
     }
 }

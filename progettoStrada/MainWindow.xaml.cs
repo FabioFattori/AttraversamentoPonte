@@ -12,6 +12,12 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Threading;
+using System.Drawing;
+
+
+
+
 
 namespace progettoStrada
 {
@@ -20,9 +26,61 @@ namespace progettoStrada
     /// </summary>
     public partial class MainWindow : Window
     {
+        Strada stradaDestra;
+        Strada stradaSinistra;
         public MainWindow()
         {
             InitializeComponent();
+            stradaDestra = new Strada("destra");
+            stradaSinistra = new Strada("sinistra");
+        }
+
+        
+
+        private void SpawnMacchinaInStradaDestra_Click(object sender, RoutedEventArgs e)
+        {
+            Thread nuovaMacchina = new Thread(new ThreadStart(SpawnMacchinaDestra));
+            nuovaMacchina.Start();
+        }
+
+        public void SpawnMacchinaDestra()
+        {
+            CreaNuovaMacchina("destra");
+        }
+
+        public void CreaNuovaMacchina(string lato)
+        {
+            
+            if (lato == "destra")
+            {
+                Macchina nuova = new Macchina(stradaDestra);
+                stradaDestra.MacchineInStrada.Add(nuova);
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    Immagine_Nuova_Destra.Margin = new Thickness(625, 170, 0, 0);
+                }));
+                
+            }
+            else
+            {
+                Macchina nuova = new Macchina(stradaSinistra);
+                stradaSinistra.MacchineInStrada.Add(nuova);
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                   Immagine_Nuova_Sinistra.Margin = new Thickness(10, 239, 0, 0);
+                }));
+            }
+        }
+
+        private void SpawnMacchinaInStradaSinistra_Click(object sender, RoutedEventArgs e)
+        {
+            Thread nuovaMacchina = new Thread(new ThreadStart(SpawnMacchinaSinistra));
+            nuovaMacchina.Start();
+        }
+
+        public void SpawnMacchinaSinistra()
+        {
+            CreaNuovaMacchina("sinistra");
         }
 
         /*metodo per far muovere le immagini
@@ -32,6 +90,6 @@ namespace progettoStrada
 
 
         }));
-        */ 
+        */
     }
 }
