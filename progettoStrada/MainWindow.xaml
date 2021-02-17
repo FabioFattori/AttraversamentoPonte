@@ -21,7 +21,7 @@
         <Image HorizontalAlignment="Left" Height="59" Margin="807,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_1" Source="macchina rossa.png"/>
         <Image HorizontalAlignment="Left" Height="59" Margin="756,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_2" Source="macchina specchiata.png"/>
         <Image HorizontalAlignment="Left" Height="59" Margin="706,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_3" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="1132,171,-75.2,0" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_4" Source="macchina specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="642,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_4" Source="macchina specchiata.png" RenderTransformOrigin="0.537,0.541"/>
 
 
     </Grid>

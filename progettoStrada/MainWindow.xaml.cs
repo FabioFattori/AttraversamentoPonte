@@ -46,11 +46,12 @@ namespace progettoStrada
             stradaSinistra = new Strada("sinistra");
             ponte = new Ponte();
             r = new Random();
-
-            Thread t2 = new Thread(new ThreadStart(SpawnCasualeDiMacchine));
+            /*
+            Thread t2 = new Thread(new ThreadStart(SpawnInizialeDiMacchine));
             t2.Start();
+            */
         }
-
+        /*
         public void SpawnCasualeDiMacchine()
         {
             SpawnInizialeDiMacchine();
@@ -59,10 +60,10 @@ namespace progettoStrada
                 //int attesa=r.Next()
             }
         }
-
+        */
         public void SpawnInizialeDiMacchine()
         {
-            int numeroMacchineDaSpawnareInStradaDestra = r.Next(0,6);
+            int numeroMacchineDaSpawnareInStradaDestra = 2;
 
             if (numeroMacchineDaSpawnareInStradaDestra == 1)
             {
@@ -70,9 +71,13 @@ namespace progettoStrada
                 {
                     Immagine_Destra_0.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                 }));
+                Macchina nuova = new Macchina(stradaDestra);
+                stradaDestra.MacchineInStrada.Add(nuova);
 
                 //metodo per far arrivare al semaforo
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_0);
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_0);
+               
             }
             else if (numeroMacchineDaSpawnareInStradaDestra == 2)
             {
@@ -81,10 +86,40 @@ namespace progettoStrada
                     Immagine_Destra_0.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                     Immagine_Destra_1.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                 }));
+
+                //metto lo stesso oggetto macchina due volte nella lista dell'oggetto strada perchè non mi interressa che oggetto c'è nella lista, ma mi interessa che questo oggetto ci sia per poi toglierolo nel metodo IniziaMovimentoMacchinaDestra()
+                Macchina nuova = new Macchina(stradaDestra);
+                stradaDestra.MacchineInStrada.Add(nuova);
+                stradaDestra.MacchineInStrada.Add(nuova);
+
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    altezzaMacchinaADestra = (int)Immagine_Destra_1.Margin.Top;
+                    distanzaDaDestraMacchinaADestra = (int)Immagine_Destra_1.Margin.Left;
+                }));
                 //metodo per far arrivare al semaforo
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_0);
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_1);
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_0);
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    Immagine_Destra_0.Margin = new Thickness(1100, 1000, 0, 0);
+                }));
+                arrivoAlSemaforoPerDestra -= 60;
+                //questa parte non fa rifare lo spawn alla seconda macchina
+                int i=distanzaDaDestraPerSpawnDelleMacchineInStradaDestra;
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = (int)Immagine_Destra_1.Margin.Top;
+                }));
+                MovimentoPerArrivareASemaforo("D", Immagine_Destra_1);
+                distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = i;
+
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_1);
+                
+                
+
             }
             else if (numeroMacchineDaSpawnareInStradaDestra == 3)
             {
@@ -94,12 +129,39 @@ namespace progettoStrada
                     Immagine_Destra_1.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                     Immagine_Destra_2.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                 }));
+
+                //metto lo stesso oggetto macchina due volte nella lista dell'oggetto strada perchè non mi interressa che oggetto c'è nella lista, ma mi interessa che questo oggetto ci sia per poi toglierolo nel metodo IniziaMovimentoMacchinaDestra()
+                Macchina nuova = new Macchina(stradaDestra);
+                stradaDestra.MacchineInStrada.Add(nuova);
+                stradaDestra.MacchineInStrada.Add(nuova);
+                stradaDestra.MacchineInStrada.Add(nuova);
+
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    altezzaMacchinaADestra = (int)Immagine_Destra_1.Margin.Top;
+                    distanzaDaDestraMacchinaADestra = arrivoAlSemaforoPerDestra;
+                }));
+
                 //metodo per far arrivare al semaforo
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_0);
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_1);
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_2);
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_0);
+                arrivoAlSemaforoPerDestra -= 60;
+                
+                MovimentoPerArrivareASemaforo("D", Immagine_Destra_1);
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_1);
+                arrivoAlSemaforoPerDestra -= 60;
+                MovimentoPerArrivareASemaforo("D", Immagine_Destra_2);
+                this.Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    altezzaMacchinaADestra = (int)Immagine_Destra_2.Margin.Top;
+                    distanzaDaDestraMacchinaADestra = arrivoAlSemaforoPerDestra;
+                }));
+                IniziaMovimentoMacchinaDestra(Immagine_Destra_2);
+                
             }
             else if (numeroMacchineDaSpawnareInStradaDestra == 4)
             {
@@ -268,7 +330,7 @@ namespace progettoStrada
                         immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaPerSpawnMacchine, 0, 0);
                     }));
                     Thread.Sleep(TimeSpan.FromMilliseconds(400));
-                   s
+                   
                     arrivoAlSemaforoPerSinistra -= 60;
                     arrivata = true;
                 }
@@ -293,10 +355,8 @@ namespace progettoStrada
             {
                 Macchina nuova = new Macchina(stradaDestra);
                 stradaDestra.MacchineInStrada.Add(nuova);
-                this.Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    Immagine_Nuova_Destra.Margin = new Thickness(800, 168, 0, 0);
-                }));
+                MovimentoPerArrivareASemaforo("D", Immagine_Nuova_Destra);
+                arrivoAlSemaforoPerDestra += 60;
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
@@ -312,10 +372,8 @@ namespace progettoStrada
             {
                 Macchina nuova = new Macchina(stradaSinistra);
                 stradaSinistra.MacchineInStrada.Add(nuova);
-                this.Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    Immagine_Nuova_Sinistra.Margin = new Thickness(388, 168, 0, 0);
-                }));
+                MovimentoPerArrivareASemaforo("S", Immagine_Nuova_Sinistra);
+                arrivoAlSemaforoPerSinistra += 60;
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
                 {
@@ -354,7 +412,7 @@ namespace progettoStrada
                         while (altezzaMacchinaADestra <= altezzaInMainWindowDelPonte - 15)
                         {
                             Thread.Sleep(TimeSpan.FromMilliseconds(500));
-                            altezzaMacchinaADestra += r.Next(10, 16);
+                            altezzaMacchinaADestra += r.Next(10,13);
                             distanzaDaDestraMacchinaADestra -= r.Next(10, 16);
                             this.Dispatcher.BeginInvoke(new Action(() =>
                             {
