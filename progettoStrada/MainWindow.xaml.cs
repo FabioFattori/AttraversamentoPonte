@@ -46,10 +46,10 @@ namespace progettoStrada
             stradaSinistra = new Strada("sinistra");
             ponte = new Ponte();
             r = new Random();
-            /*
+            
             Thread t2 = new Thread(new ThreadStart(SpawnInizialeDiMacchine));
-            t2.Start();
-            */
+            //t2.Start();
+           
         }
         /*
         public void SpawnCasualeDiMacchine()
@@ -114,11 +114,11 @@ namespace progettoStrada
                     distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = (int)Immagine_Destra_1.Margin.Top;
                 }));
                 MovimentoPerArrivareASemaforo("D", Immagine_Destra_1);
-                distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = i;
+                
 
                 IniziaMovimentoMacchinaDestra(Immagine_Destra_1);
-                
-                
+                distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = i;
+
 
             }
             else if (numeroMacchineDaSpawnareInStradaDestra == 3)
@@ -339,6 +339,8 @@ namespace progettoStrada
 
         private void SpawnMacchinaInStradaDestra_Click(object sender, RoutedEventArgs e)
         {
+
+            arrivoAlSemaforoPerDestra = 800;
             Thread nuovaMacchina = new Thread(new ThreadStart(SpawnMacchinaDestra));
             nuovaMacchina.Start();
         }
@@ -353,9 +355,9 @@ namespace progettoStrada
 
             if (lato == "destra")
             {
+                MovimentoPerArrivareASemaforo("D", Immagine_Nuova_Destra);
                 Macchina nuova = new Macchina(stradaDestra);
                 stradaDestra.MacchineInStrada.Add(nuova);
-                MovimentoPerArrivareASemaforo("D", Immagine_Nuova_Destra);
                 arrivoAlSemaforoPerDestra += 60;
                 Thread.Sleep(TimeSpan.FromMilliseconds(200));
 
@@ -367,12 +369,14 @@ namespace progettoStrada
                 }));
                 IniziaMovimentoMacchinaDestra(Immagine_Nuova_Destra);
 
+                
             }
             else
             {
+                
+                MovimentoPerArrivareASemaforo("S", Immagine_Nuova_Sinistra);
                 Macchina nuova = new Macchina(stradaSinistra);
                 stradaSinistra.MacchineInStrada.Add(nuova);
-                MovimentoPerArrivareASemaforo("S", Immagine_Nuova_Sinistra);
                 arrivoAlSemaforoPerSinistra += 60;
 
                 this.Dispatcher.BeginInvoke(new Action(() =>
@@ -382,6 +386,7 @@ namespace progettoStrada
 
                 }));
                 IniziaMovimentoMacchinaSinistra(Immagine_Nuova_Sinistra);
+                
             }
         }
 
