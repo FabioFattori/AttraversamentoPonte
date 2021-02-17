@@ -25,8 +25,6 @@ namespace progettoStrada
         int finePontePerStradaDestra = 500;
         int altezzaInMainWindowDelPonte = 200;
         int altezzaPuntoDiArrivo = 250;
-        int puntoDiArrivoPerStradaDestra = 123;
-        int puntoDiArrivoPerStradaSinistra = 1000;
         int altezzaMacchinaADestra;
         int distanzaDaDestraMacchinaADestra;
         int altezzaMacchinaASinistra;
@@ -39,7 +37,7 @@ namespace progettoStrada
 
         int distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = 1130;
         int distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra = -60;
-        int altezzaPerSpawnMacchine = 174;
+        int altezzaPerSpawnMacchine = 160;
 
         public MainWindow()
         {
@@ -338,7 +336,7 @@ namespace progettoStrada
 
 
                     //finisco la tratta
-                    while (distanzaDaDestraMacchinaADestra >= puntoDiArrivoPerStradaDestra + 4)
+                    while (distanzaDaDestraMacchinaADestra <= distanzaDaDestraPerSpawnDelleMacchineInStradaDestra + 4)
                     {
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                         distanzaDaDestraMacchinaADestra -= r.Next(2, 5);
@@ -348,7 +346,7 @@ namespace progettoStrada
                         }));
 
                     }
-                    distanzaDaDestraMacchinaADestra = puntoDiArrivoPerStradaDestra;
+                    distanzaDaDestraMacchinaADestra = distanzaDaDestraPerSpawnDelleMacchineInStradaDestra+1;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaMacchinaADestra, 0, 0);
@@ -437,7 +435,7 @@ namespace progettoStrada
 
 
                     //finisco la tratta
-                    while (distanzaDaDestraMacchinaSinistra <= puntoDiArrivoPerStradaSinistra + 4)
+                    while (distanzaDaDestraMacchinaSinistra >= distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra + 4)
                     {
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                         distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
@@ -447,7 +445,7 @@ namespace progettoStrada
                         }));
 
                     }
-                    distanzaDaDestraMacchinaSinistra = puntoDiArrivoPerStradaSinistra;
+                    distanzaDaDestraMacchinaSinistra = distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra+1;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaMacchinaASinistra, 0, 0);

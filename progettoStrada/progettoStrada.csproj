@@ -99,9 +99,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="primo schizzo ponte.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="macchina.png" />
   </ItemGroup>
   <ItemGroup>
@@ -112,6 +109,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="macchina rossa specchiata.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="primo schizzo ponte.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
