@@ -10,18 +10,18 @@
         <Image HorizontalAlignment="Left" Height="502" Margin="150,0,-360.2,-82" VerticalAlignment="Top" Width="1331" Source="primo schizzo ponte.png"/>
         <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="895,57,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaDestra" Click="SpawnMacchinaInStradaDestra_Click"/>
         <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="249,57,0,0" VerticalAlignment="Top" Width="114" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="185,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra" Source="macchina.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="190,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra" Source="macchina.png"/>
         <Image HorizontalAlignment="Left" Height="59" Margin="923,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="249,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra_1" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="311,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra_2" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="373,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra_3" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="435,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra_4" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="497,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Nuova_Sinistra_5" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="854,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra_1" Source="macchina specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="807,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra_2" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="756,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra_3" Source="macchina specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="706,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra_4" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="59" Margin="655,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Nuova_Destra_5" Source="macchina specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="252,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Sinistra_0" Source="macchina rossa specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="311,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Sinistra_1" Source="macchina.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="373,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Sinistra_2" Source="macchina rossa specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="435,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Sinistra_3" Source="macchina.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="497,426,0,-65" VerticalAlignment="Top" Width="62" x:Name="Immagine_Sinistra_4" Source="macchina rossa specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="854,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_0" Source="macchina specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="807,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_1" Source="macchina rossa.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="756,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_2" Source="macchina specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="706,426,0,-65" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_3" Source="macchina rossa.png"/>
+        <Image HorizontalAlignment="Left" Height="59" Margin="1132,171,-75.2,0" VerticalAlignment="Top" Width="64" x:Name="Immagine_Destra_4" Source="macchina specchiata.png"/>
 
 
     </Grid>
