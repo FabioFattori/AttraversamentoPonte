@@ -7,21 +7,28 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="1127.023" >
     <Grid>
-        <Image HorizontalAlignment="Left" Height="478" Margin="76,135,-23.2,-193" VerticalAlignment="Top" Width="1068" Source="primo schizzo ponte.png"/>
-        <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="895,57,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaDestra" Click="SpawnMacchinaInStradaDestra_Click"/>
-        <Button Content="inserisci&#xD;&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="249,57,0,0" VerticalAlignment="Top" Width="114" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="190,413,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Nuova_Sinistra" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="77" Margin="933,431,0,-88" VerticalAlignment="Top" Width="75" x:Name="Immagine_Nuova_Destra" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="190,541,0,-193" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_0" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="190,485,0,-137" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_1" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="190,613,0,-265" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_2" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="190,690,0,-337" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_3" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="105,413,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_4" Source="macchina rossa specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="933,485,0,-137" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_0" Source="macchina specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="933,557,0,-209" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_1" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="67" Margin="933,618,0,-265" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_2" Source="macchina specchiata.png"/>
-        <Image HorizontalAlignment="Left" Height="74" Margin="933,665,0,-319" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_3" Source="macchina rossa.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="933,739,0,-391" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_4" Source="macchina specchiata.png" RenderTransformOrigin="0.537,0.541"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="29*"/>
+        </Grid.RowDefinitions>
+        <Image HorizontalAlignment="Left"  Height="182" Margin="-290,137,0,0" VerticalAlignment="Top" Width="389" Source="restoDelPonte.png" Grid.RowSpan="2"/>
+
+
+        <Image HorizontalAlignment="Left" Height="478" Margin="67,135,-14.2,-193" VerticalAlignment="Top" Width="1068" Source="primo schizzo ponte.png" Grid.RowSpan="2"/>
+        <Button Content="inserisci&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="895,57,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaDestra" Click="SpawnMacchinaInStradaDestra_Click"/>
+        <Button Content="inserisci&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="249,57,0,0" VerticalAlignment="Top" Width="114" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="190,138.2,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Nuova_Sinistra" Source="macchina.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="77" Margin="933,156.2,0,-88" VerticalAlignment="Top" Width="75" x:Name="Immagine_Nuova_Destra" Source="macchina rossa.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="190,266.2,0,-193" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_0" Source="macchina rossa specchiata.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="190,210.2,0,-137" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_1" Source="macchina.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="190,338.2,0,-265" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_2" Source="macchina rossa specchiata.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="190,415.2,0,-337" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_3" Source="macchina.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="110,138.2,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_4" Source="macchina rossa specchiata.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="933,210.2,0,-137" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_0" Source="macchina specchiata.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="933,282.2,0,-209" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_1" Source="macchina rossa.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="67" Margin="933,343.2,0,-265" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_2" Source="macchina specchiata.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="74" Margin="933,390.2,0,-319" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_3" Source="macchina rossa.png" Grid.Row="1"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="933,464.2,0,-391" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_4" Source="macchina specchiata.png" RenderTransformOrigin="0.537,0.541" Grid.Row="1"/>
 
 
     </Grid>

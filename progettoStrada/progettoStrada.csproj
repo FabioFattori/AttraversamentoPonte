@@ -113,5 +113,8 @@
   <ItemGroup>
     <Resource Include="primo schizzo ponte.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="restoDelPonte.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

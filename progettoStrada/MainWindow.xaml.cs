@@ -21,10 +21,10 @@ namespace progettoStrada
         //valori usati per il movimento:
         int arrivoAlSemaforoPerSinistra = 388;
         int arrivoAlSemaforoPerDestra = 740;
-        int finePontePerStradaSinistra = 700;
-        int finePontePerStradaDestra = 500;
+        int finePontePerStradaSinistra = 755;
+        int finePontePerStradaDestra = 550;
         int altezzaInMainWindowDelPonte = 200;
-        int altezzaPuntoDiArrivo = 250;
+        int altezzaPuntoDiArrivo = 235;
         int altezzaMacchinaADestra;
         int distanzaDaDestraMacchinaADestra;
         int altezzaMacchinaASinistra;
@@ -65,6 +65,7 @@ namespace progettoStrada
         */
         public void SpawnInizialeDiMacchine()
         {
+            Thread.Sleep(TimeSpan.FromMilliseconds(100));
             int numeroMacchineDaSpawnareInStradaDestra = 1;
 
             if (numeroMacchineDaSpawnareInStradaDestra == 1)
@@ -448,17 +449,7 @@ namespace progettoStrada
                                 Thread.Sleep(TimeSpan.FromMilliseconds(10));
                             }
                         }
-                        //esco dal ponte
-                        while (altezzaMacchinaASinistra <= altezzaPuntoDiArrivo - 2)
-                        {
-                            altezzaMacchinaASinistra += r.Next(1, 3);
-                            distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
-                            this.Dispatcher.BeginInvoke(new Action(() =>
-                            {
-                                immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaMacchinaASinistra, 0, 0);
-                            }));
-                            Thread.Sleep(TimeSpan.FromMilliseconds(10));
-                        }
+                        
                     }
 
                     altezzaMacchinaASinistra = altezzaPuntoDiArrivo;
