@@ -29,6 +29,7 @@ namespace progettoStrada
         int distanzaDaDestraMacchinaADestra;
         int altezzaMacchinaASinistra;
         int distanzaDaDestraMacchinaSinistra;
+        int controlloSeSiInloopa;
         System.Windows.Controls.Image immagineInMovimento;
         System.Windows.Controls.Image immagineInMovimento1;
 
@@ -36,7 +37,7 @@ namespace progettoStrada
         ///
 
         int distanzaDaDestraPerSpawnDelleMacchineInStradaDestra = 1130;
-        int distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra = -60;
+        int distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra = -100;
         int altezzaPerSpawnMacchine = 160;
 
         public MainWindow()
@@ -72,7 +73,7 @@ namespace progettoStrada
                 {
                     Immagine_Destra_0.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaDestra, altezzaPerSpawnMacchine, 0, 0);
                 }));
-                
+
 
                 //metodo per far arrivare al semaforo
 
@@ -92,7 +93,7 @@ namespace progettoStrada
                 {
                     Immagine_Sinistra_0.Margin = new Thickness(distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra, altezzaPerSpawnMacchine, 0, 0);
                 }));
-                
+
                 //metodo per far arrivare al semaforo
                 Thread.Sleep(TimeSpan.FromMilliseconds(400));
                 immagineInMovimento1 = Immagine_Sinistra_0;
@@ -137,7 +138,7 @@ namespace progettoStrada
         }
 
 
-        public void MovimentoPerArrivareASemaforo(string lato, System.Windows.Controls.Image immagineDaMuovere)
+        public void MovimentoPerArrivareASemaforo(string lato, System.Windows.Controls.Image immagine)
         {
             bool arrivata = false;
             while (!arrivata)
@@ -154,7 +155,7 @@ namespace progettoStrada
                         distanzaDaDestraMacchinaADestra -= r.Next(2, 5);
                         this.Dispatcher.BeginInvoke(new Action(() =>
                         {
-                            immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaPerSpawnMacchine, 0, 0);
+                            immagine.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaPerSpawnMacchine, 0, 0);
                         }));
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                     }
@@ -162,7 +163,7 @@ namespace progettoStrada
                     distanzaDaDestraMacchinaADestra = i;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaPerSpawnMacchine, 0, 0);
+                        immagine.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaPerSpawnMacchine, 0, 0);
                     }));
                     Thread.Sleep(TimeSpan.FromMilliseconds(10));
 
@@ -178,14 +179,14 @@ namespace progettoStrada
                         distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
                         this.Dispatcher.BeginInvoke(new Action(() =>
                         {
-                            immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaPuntoDiArrivo, 0, 0);
+                            immagine.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaPuntoDiArrivo, 0, 0);
                         }));
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                     }
                     distanzaDaDestraMacchinaSinistra = arrivoAlSemaforoPerSinistra;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaPuntoDiArrivo, 0, 0);
+                        immagine.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaPuntoDiArrivo, 0, 0);
                     }));
                     Thread.Sleep(TimeSpan.FromMilliseconds(10));
 
@@ -262,9 +263,11 @@ namespace progettoStrada
 
         public void IniziaMovimentoMacchinaDestra(System.Windows.Controls.Image immagineDaMuovere)
         {
+            controlloSeSiInloopa = 0;
             bool macchinaStaFerma = true;
             while (macchinaStaFerma)
             {
+                controlloSeSiInloopa++;
                 if (ControlloSeSulPonteSonoPresentiMacchineProvenientiDaDestra() == true && stradaSinistra.MacchineInStrada.Count == 0)
                 {
 
@@ -323,7 +326,7 @@ namespace progettoStrada
                         }));
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                     }
-                    
+
                     altezzaMacchinaADestra = altezzaPerSpawnMacchine;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
@@ -336,7 +339,7 @@ namespace progettoStrada
 
 
                     //finisco la tratta
-                    while (distanzaDaDestraMacchinaADestra <= distanzaDaDestraPerSpawnDelleMacchineInStradaDestra + 4)
+                    while (distanzaDaDestraMacchinaADestra >= distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra + 4)
                     {
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                         distanzaDaDestraMacchinaADestra -= r.Next(2, 5);
@@ -346,7 +349,7 @@ namespace progettoStrada
                         }));
 
                     }
-                    distanzaDaDestraMacchinaADestra = distanzaDaDestraPerSpawnDelleMacchineInStradaDestra+1;
+                    distanzaDaDestraMacchinaADestra = distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra + 1;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaADestra, altezzaMacchinaADestra, 0, 0);
@@ -355,11 +358,16 @@ namespace progettoStrada
 
 
                 }
+                if (controlloSeSiInloopa == 4)
+                {
+                    stradaSinistra.MacchineInStrada.RemoveAt(0);
+                }
             }
         }
 
         public void IniziaMovimentoMacchinaSinistra(System.Windows.Controls.Image immagineDaMuovere)
         {
+            
             bool macchinaStaFerma = true;
             while (macchinaStaFerma)
             {
@@ -410,7 +418,36 @@ namespace progettoStrada
 
 
 
-                        stradaSinistra.MacchineInStrada.RemoveAt(0);
+                        try
+                        {
+                            if (controlloSeSiInloopa != 4)
+                                stradaSinistra.MacchineInStrada.RemoveAt(0);
+                            //esco dal ponte
+                            while (altezzaMacchinaASinistra <= altezzaPuntoDiArrivo - 2)
+                            {
+                                altezzaMacchinaASinistra += r.Next(1, 3);
+                                distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
+                                this.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaMacchinaASinistra, 0, 0);
+                                }));
+                                Thread.Sleep(TimeSpan.FromMilliseconds(10));
+                            }
+                        }
+                        catch (Exception)
+                        {
+                            //esco dal ponte
+                            while (altezzaMacchinaASinistra <= altezzaPuntoDiArrivo - 2)
+                            {
+                                altezzaMacchinaASinistra += r.Next(1, 3);
+                                distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
+                                this.Dispatcher.BeginInvoke(new Action(() =>
+                                {
+                                    immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaMacchinaASinistra, 0, 0);
+                                }));
+                                Thread.Sleep(TimeSpan.FromMilliseconds(10));
+                            }
+                        }
                         //esco dal ponte
                         while (altezzaMacchinaASinistra <= altezzaPuntoDiArrivo - 2)
                         {
@@ -423,7 +460,7 @@ namespace progettoStrada
                             Thread.Sleep(TimeSpan.FromMilliseconds(10));
                         }
                     }
-                    
+
                     altezzaMacchinaASinistra = altezzaPuntoDiArrivo;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
@@ -435,7 +472,7 @@ namespace progettoStrada
 
 
                     //finisco la tratta
-                    while (distanzaDaDestraMacchinaSinistra >= distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra + 4)
+                    while (distanzaDaDestraMacchinaSinistra <= distanzaDaDestraPerSpawnDelleMacchineInStradaDestra + 4)
                     {
                         Thread.Sleep(TimeSpan.FromMilliseconds(10));
                         distanzaDaDestraMacchinaSinistra += r.Next(2, 5);
@@ -445,7 +482,7 @@ namespace progettoStrada
                         }));
 
                     }
-                    distanzaDaDestraMacchinaSinistra = distanzaDaDestraPerSpawnDelleMacchineInStradaSinistra+1;
+                    distanzaDaDestraMacchinaSinistra = distanzaDaDestraPerSpawnDelleMacchineInStradaDestra + 1;
                     this.Dispatcher.BeginInvoke(new Action(() =>
                     {
                         immagineDaMuovere.Margin = new Thickness(distanzaDaDestraMacchinaSinistra, altezzaMacchinaASinistra, 0, 0);

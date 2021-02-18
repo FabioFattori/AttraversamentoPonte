@@ -16,7 +16,7 @@
         <Image HorizontalAlignment="Left" Height="72" Margin="190,485,0,-137" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_1" Source="macchina.png"/>
         <Image HorizontalAlignment="Left" Height="72" Margin="190,613,0,-265" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_2" Source="macchina rossa specchiata.png"/>
         <Image HorizontalAlignment="Left" Height="67" Margin="190,690,0,-337" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_3" Source="macchina.png"/>
-        <Image HorizontalAlignment="Left" Height="72" Margin="110,413,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_4" Source="macchina rossa specchiata.png"/>
+        <Image HorizontalAlignment="Left" Height="72" Margin="105,413,0,-65" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_4" Source="macchina rossa specchiata.png"/>
         <Image HorizontalAlignment="Left" Height="72" Margin="933,485,0,-137" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_0" Source="macchina specchiata.png"/>
         <Image HorizontalAlignment="Left" Height="72" Margin="933,557,0,-209" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_1" Source="macchina rossa.png"/>
         <Image HorizontalAlignment="Left" Height="67" Margin="933,618,0,-265" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_2" Source="macchina specchiata.png"/>
