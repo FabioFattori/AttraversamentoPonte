@@ -23,8 +23,8 @@ namespace progettoStrada
         int arrivoAlSemaforoPerSinistraPerSecondaMacchina = 375;
         int arrivoAlSemaforoPerDestra = 880;
         int arrivoAlSemaforoPerDestraPerSecondaMacchina = 950;
-        int finePontePerStradaSinistra = 755;
-        int finePontePerStradaDestra = 550;
+        int finePontePerStradaSinistra = 790;
+        int finePontePerStradaDestra = 500;
         int altezzaInMainWindowDelPonte = 200;
         int altezzaPuntoDiArrivo = 235;
         int altezzaMacchinaADestra;
@@ -335,6 +335,7 @@ namespace progettoStrada
 
             
             Thread nuovaMacchina = new Thread(new ThreadStart(SpawnMacchinaDestra));
+            nuovaMacchina.Name = "MacchinaDestra1";
             nuovaMacchina.Start();
         }
 
@@ -386,6 +387,7 @@ namespace progettoStrada
         private void SpawnMacchinaInStradaSinistra_Click(object sender, RoutedEventArgs e)
         {
             Thread nuovaMacchina = new Thread(new ThreadStart(SpawnMacchinaSinistra));
+            nuovaMacchina.Name = "MacchinaSinistra1";
             nuovaMacchina.Start();
         }
 
@@ -739,7 +741,7 @@ namespace progettoStrada
                 {
                     if (ControlloSeSulPonteSonoPresentiMacchineProvenientiDaSinistra() == true && stradaDestra.MacchineInStrada.Count == 0)
                     {
-                        altezzaSecondaMacchina = altezzaPerSpawnMacchine;
+                        altezzaSecondaMacchina = altezzaPuntoDiArrivo;
                         //arrivo al semaforo
                         while (distanzaDaDestraMacchinaSinistra >= arrivoAlSemaforoPerSinistra + 4)
                         {

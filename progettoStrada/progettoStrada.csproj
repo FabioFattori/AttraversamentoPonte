@@ -99,28 +99,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="macchina.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="macchina rossa.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="macchina specchiata.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="macchina rossa specchiata.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="primo schizzo ponte.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="restoDelPonte.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="macchinamoderna specchiata.png" />
-    <Resource Include="macchinamoderna++ specchiata.png" />
-    <Resource Include="macchinamoderna++.png" />
-    <Resource Include="macchinamoderna.png" />
+    <Resource Include="modelloMacchina1.png" />
+    <Resource Include="modelloMacchina2.png" />
+    <Resource Include="modelloMacchina3.png" />
+    <Resource Include="modelloMacchina4.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
