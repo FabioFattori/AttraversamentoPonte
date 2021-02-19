@@ -116,5 +116,11 @@
   <ItemGroup>
     <Resource Include="restoDelPonte.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="macchinamoderna specchiata.png" />
+    <Resource Include="macchinamoderna++ specchiata.png" />
+    <Resource Include="macchinamoderna++.png" />
+    <Resource Include="macchinamoderna.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

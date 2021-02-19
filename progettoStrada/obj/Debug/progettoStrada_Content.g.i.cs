@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("restodelponte.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("macchinamoderna%20specchiata.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("macchinamoderna++%20specchiata.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("macchinamoderna++.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("macchinamoderna.png")]
 
 
