@@ -16,7 +16,7 @@
 
 
         <Button Content="inserisci&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="830,57,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaDestra" Click="SpawnMacchinaInStradaDestra_Click"/>
-        <Button Content="inserisci&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="101,57,0,0" VerticalAlignment="Top" Width="114" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
+        <Button Content="inserisci&#xA;macchina" HorizontalAlignment="Left" Height="73" Margin="285,62,0,0" VerticalAlignment="Top" Width="113" x:Name="SpawnMacchinaInStradaSinistra" Click="SpawnMacchinaInStradaSinistra_Click"/>
         <Image HorizontalAlignment="Left" Height="72" Margin="-280,173,0,0" VerticalAlignment="Top" Width="80" x:Name="Immagine_Nuova_Sinistra" Source="modelloMacchina2.png"/>
         <Image HorizontalAlignment="Left" Height="53" Margin="1194,192,-148.2,0" VerticalAlignment="Top" Width="75" x:Name="Immagine_Nuova_Destra" Source="modelloMacchina4.png"/>
         <Image HorizontalAlignment="Left" Height="67" Margin="-195,225,0,0" VerticalAlignment="Top" Width="80" x:Name="Immagine_Sinistra_0" Source="modelloMacchina3.png"/>
@@ -29,8 +29,10 @@
         <Image HorizontalAlignment="Left" Height="60" Margin="1119,137,-111.2,0" VerticalAlignment="Top" Width="113" x:Name="Immagine_Destra_2" Source="modelloMacchina1.png"/>
         <Image HorizontalAlignment="Left" Height="53" Margin="1119,192,-73.2,0" VerticalAlignment="Top" Width="75" x:Name="Immagine_Destra_3" Source="modelloMacchina4.png"/>
         <Image HorizontalAlignment="Left" Height="60" Margin="1194,137,-173.2,0" VerticalAlignment="Top" Width="100" x:Name="Immagine_Destra_4" Source="modelloMacchina1.png" RenderTransformOrigin="0.537,0.541"/>
-        <ComboBox HorizontalAlignment="Left" Height="32" Margin="297,80,0,0" VerticalAlignment="Top" Width="131" x:Name="numeroMacchineDaCreareASinistra"/>
-        <ComboBox HorizontalAlignment="Left" Height="32" Margin="962,80,0,0" VerticalAlignment="Top" Width="109" x:Name="numeroMacchineDaCreareADestra"/>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="403,80,0,0" VerticalAlignment="Top" Width="161" x:Name="numeroMacchineDaCreareASinistra"/>
+        <ComboBox HorizontalAlignment="Left" Height="32" Margin="948,80,0,0" VerticalAlignment="Top" Width="161" x:Name="numeroMacchineDaCreareADestra"/>
+        <Label Content="numero macchine da creare:" HorizontalAlignment="Left" Height="34" Margin="403,41,0,0" VerticalAlignment="Top" Width="161"/>
+        <Label Content="numero macchine da creare:" HorizontalAlignment="Left" Height="34" Margin="948,46,0,0" VerticalAlignment="Top" Width="161"/>
 
 
     </Grid>
