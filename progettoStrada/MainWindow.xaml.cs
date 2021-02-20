@@ -49,6 +49,8 @@ namespace progettoStrada
         public MainWindow()
         {
             InitializeComponent();
+            Thread t2 = new Thread(new ThreadStart(SpawnInizialeDiMacchine));
+            t2.Start();
             //gestione combobox
             string[] numeroDiMacchineDaCreare = new string[3];
             numeroDiMacchineDaCreare[0] = "0";
@@ -65,9 +67,12 @@ namespace progettoStrada
             ponte = new Ponte();
             r = new Random();
 
-            Thread t2 = new Thread(new ThreadStart(SpawnInizialeDiMacchine));
-            t2.Start();
-
+            
+            
+            Thread t5 = new Thread(new ThreadStart(SpawnContinuoDiMacchine));
+            
+            t5.Start();
+            
         }
         /*
         public void SpawnCasualeDiMacchine()
@@ -79,6 +84,43 @@ namespace progettoStrada
             }
         }
         */
+
+        public void SpawnContinuoDiMacchine()
+        {
+            int numeroDiSpawn = 0;//quando arriva a 7 fa eseguire il metodo di inizio del programma SpawnInizialeDiMacchine
+            while (true)
+            {
+                int scelta = r.Next(0, 2);
+                if (numeroDiSpawn == 7)
+                {
+                    Thread.Sleep(TimeSpan.FromSeconds(10));
+                    Thread SpawnIniziale = new Thread(new ThreadStart(SpawnInizialeDiMacchine));
+                    SpawnIniziale.Start();
+                    numeroDiSpawn = 0;
+                    
+                }
+                else
+                {
+                    if (scelta == 0)
+                    {
+                        Thread.Sleep(TimeSpan.FromSeconds(5));
+                        Thread macchinaADestra = new Thread(new ThreadStart(MacchinaNuovaSpawnataARandomDestra));
+                        immagineInMovimento = Immagine_Destra_4;
+                        macchinaADestra.Start();
+                    }    
+                    else
+                    {
+                        Thread.Sleep(TimeSpan.FromSeconds(7));
+                        Thread macchinaASinistra = new Thread(new ThreadStart(MacchinaNuovaSpawnataARandomSinistra));
+                        macchinaASinistra.Name = "MacchinaSinistra2";
+                        immagineInMovimento1 = Immagine_Sinistra_4;
+                        macchinaASinistra.Start();
+                        
+                    }
+                }
+                numeroDiSpawn++;
+            }
+        }
         public void SpawnInizialeDiMacchine()
         {
             Thread.Sleep(TimeSpan.FromMilliseconds(100));
@@ -198,6 +240,9 @@ namespace progettoStrada
 
                     Thread.Sleep(TimeSpan.FromMilliseconds(100));
                     arrivoAlSemaforoPerSinistra = i;
+
+
+                    
                 }
             }
 
